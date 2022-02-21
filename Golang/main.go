@@ -3,5 +3,5 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println(longestSubString("abccbaabddd"))
+	fmt.Println(lengthOfLastWord("  abc def   hji "))
 }
