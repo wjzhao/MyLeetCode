@@ -13,7 +13,7 @@ func permute(nums []int) [][]int {
 
 func dfs(nums []int, path []int, used []bool, result *[][]int) {
 	if len(path) == len(nums) {
-		*result = append(*result, path)
+		*result = append(*result, append([]int{}, path...))
 		return
 	}
 	for i := 0; i < len(nums); i++ {
