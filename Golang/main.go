@@ -3,6 +3,6 @@ package main
 import "fmt"
 
 func main() {
-	ll := permuteUnique([]int{1, 3, 3})
-	fmt.Println(ll)
+	root := makeList([]int{1, 2, 3, 4, 5})
+	fmt.Println(printList(removeNthFromEnd(root, 2)))
 }
