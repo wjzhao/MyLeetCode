@@ -1,5 +1,7 @@
 package main
 
+import "strings"
+
 var letter = map[string][]string{
 	"2": {"a", "b", "c"},
 	"3": {"d", "e", "f"},
@@ -9,4 +11,25 @@ var letter = map[string][]string{
 	"7": {"p", "q", "r", "s"},
 	"8": {"t", "u", "v"},
 	"9": {"w", "x", "y", "z"},
+}
+
+func letterCombinations(digits string) []string {
+	result := []string{}
+	digits_strs := strings.Split(digits, "")
+	backtrackLetter(digits_strs, -1, []string{}, &result)
+	return result
+}
+
+func backtrackLetter(str []string, currentIndex int, path []string, result *[]string) {
+	if len(path) == len(str) {
+		*result = append(*result, strings.Join(path, ""))
+		return
+	}
+	currentIndex++
+	letters := letter[str[currentIndex]]
+	for i := 0; i < len(letters); i++ {
+		path = append(path, letters[i])
+		backtrackLetter(str, currentIndex, path, result)
+		path = path[:len(path)-1]
+	}
 }

@@ -5,6 +5,6 @@ import "fmt"
 // import "fmt"
 
 func main() {
-	ret := reverseWords("  hello   world   ")
+	ret := letterCombinations("")
 	fmt.Println(ret)
 }
